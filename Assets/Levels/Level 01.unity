@@ -967,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 684635464}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.41, y: -2.7, z: 2.41}
+  m_LocalPosition: {x: -1.44, y: -2.7, z: 2.34}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1021,7 +1021,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dbb8624a265dd4747be82b5275025270, type: 3}
-  m_Color: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
+  m_Color: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1094,7 +1094,7 @@ Transform:
   m_GameObject: {fileID: 750714519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.61, y: -2.88, z: -2.75}
+  m_LocalPosition: {x: 1.71, y: -2.88, z: -2.65}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1326,8 +1326,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 1.7075, y: -2.88, z: -2.8125}
-  - {x: -1.41, y: -2.7, z: 2.41}
+  - {x: 1.8075, y: -2.88, z: -2.7125}
+  - {x: -1.44, y: -2.7, z: 2.34}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1336,7 +1336,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5113636
+        value: 0.5212765
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1379,7 +1379,7 @@ LineRenderer:
     numCornerVertices: 2
     numCapVertices: 2
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   Park: {fileID: 684635467}
   Car: {fileID: 750714523}
   CarColor: {r: 1, g: 0.2216981, b: 0.2216981, a: 0}
-  _lineColor: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
+  _lineColor: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
 --- !u!33 &153877679132059892
 MeshFilter:
   m_ObjectHideFlags: 0
