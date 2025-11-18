@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class UserInput : MonoBehaviour
 {
@@ -11,21 +12,25 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Mouse mouse = Mouse.current;
+        if (mouse == null) return;
+
+        if (mouse.leftButton.wasPressedThisFrame)
         {
             _isMouseDown = true;
             OnMouseDown?.Invoke();
         }
-        if (Input.GetMouseButtonUp(0))
+
+        if (mouse.leftButton.wasReleasedThisFrame)
         {
             _isMouseDown = false;
             OnMouseUp?.Invoke();
         }
-        
+
         if (_isMouseDown)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            OnMouseMove?.Invoke(mousePosition);
+            Vector2 mousePos = mouse.position.ReadValue();
+            OnMouseMove?.Invoke(new Vector3(mousePos.x, mousePos.y, 0f));
         }
     }
 }
