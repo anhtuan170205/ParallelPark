@@ -29,4 +29,9 @@ public class Car : MonoBehaviour
     {
         _meshRenderer.sharedMaterials[0].color = color;
     }
+
+    public void StopDance()
+    {
+        BodyTransform.DOKill();
+    }
 }

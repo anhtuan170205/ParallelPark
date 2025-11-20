@@ -43,7 +43,7 @@ public class Route : MonoBehaviour
 
             Line.SetColor(_lineColor);
             Car.SetColor(CarColor);
-            Park.SetColor(_lineColor);
+            Park.SetColor(CarColor);
         }
     }
 #endif
