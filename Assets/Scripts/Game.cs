@@ -13,13 +13,13 @@ public class Game : MonoBehaviour
     private int _successfullParksCount;
 
     public event Action<Route> OnCarEnterPark;
+    public event Action OnCarCollide;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -32,11 +32,17 @@ public class Game : MonoBehaviour
         _totalRoutesCount = transform.GetComponentsInChildren<Route>().Length;
         _successfullParksCount = 0;
         OnCarEnterPark += HandleCarEnterPark;
+        OnCarCollide += HandleCarCollide;
     }
 
     public void RaiseCarEnterPark(Route route)
     {
         OnCarEnterPark?.Invoke(route);
+    }
+
+    public void RaiseCarCollide()
+    {
+        OnCarCollide?.Invoke();
     }
 
     public void RegisterRoute(Route route)
@@ -78,5 +84,15 @@ public class Game : MonoBehaviour
                 }
             });
         }
+    }
+
+    private void HandleCarCollide()
+    {
+        Debug.Log("Game Over!");
+        DOVirtual.DelayedCall(2f, () =>
+        {
+            int currentLevel = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentLevel); 
+        });
     }
 }
